@@ -1,0 +1,39 @@
+{% extends 'core/base_admin.html' %}
+{% block contenido %}
+<section id="intro" style="height: 100px;">
+            <div class="container">
+                  <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                    <div class="intro animate-box">
+                          <h1>Nueva Revision</h1>
+                              </div>
+                              </div>
+                              </div>
+                            </section>
+                            <main id="main">
+                          <div class="container">
+                          <div class="col-md-8 col-md-offset animate-box">
+                            <div class="col-md-8 col-md-offset-2 animate-box">
+                              <form  action="" method="post">
+                                    {% csrf_token %}
+                                      <ul><label> Auto</label></ul>
+                                      <ul>{{formrevision.auto}}</ul>
+                                      <ul><label> Filtro</label></ul>
+                                      <ul>{{formrevision.filtro}}</ul>
+                                      <ul><label> Aceite</label></ul>
+                                      <ul>{{formrevision.aceite}}</ul>
+                                      <ul><label> Frenos</label></ul>
+                                      <ul>{{formrevision.frenos}}</ul>
+                                      <ul><label>Motor</label></ul>
+                                      <ul>{{formrevision.motor}}</ul>
+                                      <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                      <div class="row">
+                                        <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                          <a href="{% url "lista-revision" %}" class="btn btn-default navbar-btn">Cancelar</a>
+                                      </div>
+                                      </div>
+                </div>
+            </div>
+          </div>
+        </main>
+{% endblock %}

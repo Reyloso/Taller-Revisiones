@@ -1,0 +1,48 @@
+{% extends 'core/base_admin.html' %}
+{% block contenido %}
+
+  <section id="intro" style="height: 100px;">
+                                                  <div class="container">
+                                                  <div class="row">
+                                                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                                                      <div class="intro animate-box">
+                                                        <h1>Eliminar auto</h1>
+                                                      </div>
+                                                    </div>
+                                                    </div>
+                                                        </section>
+                                                            <main id="main">
+                                                            <div class="container">
+                                                      <div class="col-md-8 col-md-offset-2 animate-box">
+                                                            <div class="table-responsive">
+                                                        <table class="table .table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                  <th>Matricula</th>
+                                                                  <th>Marca</th>
+                                                                  <th>Tipo</th>
+                                                                  <th>Consecionario</th>
+                                                                  <th>Color</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                  <td>{{a.matricula}}</td>
+                                                                  <td>{{a.marca}}</td>
+                                                                  <td>{{a.tipo}}</td>
+                                                                  <td>{{a.consecionario}}</td>
+                                                                  <td>{{a.color}}</td></tr>
+
+                                                                    </tbody>
+                                                                    </table>
+                                                                  </div>  <form  action="" method="post">
+                                                                {% csrf_token %}
+                                                              <input type="submit" name="name" class="btn btn-primary" value="Aceptar">
+                                                              <a href="{% url "lista-autos" %}" class="btn btn-default navbar-btn">Cancelar</a>
+                                                            </form>
+                                                          </div>
+                                                              </div>
+                                                          </div>
+                                    </main>
+{% endblock %}

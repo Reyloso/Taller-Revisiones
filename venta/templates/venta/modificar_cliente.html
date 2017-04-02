@@ -1,0 +1,80 @@
+{% extends "core/base_admin.html" %}
+
+{% block contenido %}
+  <section id="intro" style="height: 100px;">
+                                      <div class="container">
+                                                  <div class="row">
+                                                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                                                        <div class="intro animate-box">
+                                                              <h1>Modificar Cliente</h1>
+                                                              </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </section>
+                                                                    <main id="main">
+                                                                  <div class="container">
+                                                                    <div class="col-md-8 col-md-offset animate-box">
+                                                                      <form  action="" method="post">
+                                                                        {% csrf_token %}
+                                                                        {{ form.non_field_errors }}
+                                                                      <ul><label > Nid:</label></ul>
+                                                                      <ul>{{ formCliente.nid}}</ul>
+                                                                      {% if formCliente.nid.errors %}
+                                                                        {% for error in formCliente.nid.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Nombre:</label></ul>
+                                                                      <ul>{{ formCliente.nombre}}</ul>
+                                                                      {% if formCliente.nombre.errors %}
+                                                                        {% for error in formCliente.nombre.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Apellido:</label></ul>
+                                                                      <ul>{{ formCliente.apellido}}</ul>
+                                                                      {% if formCliente.apellido.errors %}
+                                                                        {% for error in formCliente.apellido.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Telefono:</label></ul>
+                                                                      <ul>{{ formCliente.telefono}}</ul>
+                                                                      {% if formCliente.telefono.errors %}
+                                                                        {% for error in formCliente.telefono.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Auto:</label></ul>
+                                                                      <ul>{{ formCliente.auto}}</ul>
+                                                                      {% if formCliente.auto.errors %}
+                                                                        {% for error in formCliente.auto.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                                                        <div class="row">
+                                                                          <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                                                             <a href="{% url "lista-autos" %}" class="btn btn-default">Cancelar</a>
+                                                                        </div>
+                                                                      </div>
+                                                                </form>
+                                                                    </div>
+                                                              </div>
+                                          </div>
+                                </main>
+{% endblock %}

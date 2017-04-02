@@ -1,0 +1,60 @@
+{% extends "core/base_admin.html" %}
+
+{% block contenido %}
+  <section id="intro" style="height: 100px;">
+                                      <div class="container">
+                                                  <div class="row">
+                                                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                                                        <div class="intro animate-box">
+                                                              <h1>Modificar Consecionario</h1>
+                                                              </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </section>
+                                                                    <main id="main">
+                                                                  <div class="container">
+                                                                    <div class="col-md-8 col-md-offset animate-box">
+                                                                      <form  action="" method="post">
+                                                                        {% csrf_token %}
+                                                                        {{ form.non_field_errors }}
+                                                                      <ul><label > Nid:</label></ul>
+                                                                      <ul>{{ formconsecionario.nit}}</ul>
+                                                                      {% if formconsecionario.nit.errors %}
+                                                                        {% for error in formconsecionario.nit.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Nombre:</label></ul>
+                                                                      <ul>{{ formconsecionario.nombre}}</ul>
+                                                                      {% if formconsecionario.nombre.errors %}
+                                                                        {% for error in formconsecionario.nombre.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Telefono:</label></ul>
+                                                                      <ul>{{ formconsecionario.telefono}}</ul>
+                                                                      {% if formconsecionario.telefono.errors %}
+                                                                        {% for error in formconsecionario.telefono.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                                                        <div class="row">
+                                                                          <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                                                             <a href="{% url "lista-autos" %}" class="btn btn-default">Cancelar</a>
+                                                                        </div>
+                                                                      </div>
+                                                                        </form>
+                                                                    </div>
+                                                              </div>
+                                          </div>
+                              </main>
+{% endblock %}

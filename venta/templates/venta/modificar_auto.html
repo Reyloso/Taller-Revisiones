@@ -1,0 +1,95 @@
+{% extends "core/base_admin.html" %}
+
+{% block contenido %}
+  <section id="intro" style="height: 100px;">
+                                              <div class="container">
+                                                          <div class="row">
+                                                            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                                                                <div class="intro animate-box">
+                                                                      <h1>Modificar Auto</h1>
+                                                                    </div>
+                                                                  </div>
+                                                                  </div>
+                                                                      </section>
+                                                                          <main id="main">
+                                                                          <div class="container">
+                                                                    <div class="col-md-8 col-md-offset animate-box">
+
+                                                                      <form  action="" method="post">
+                                                                        {% csrf_token %}
+                                                                        {{ form.non_field_errors }}
+
+                                                                        <ul><label > Matricula:</label></ul>
+                                                                        <ul>{{ formAuto.matricula}}</ul>
+                                                                        {% if formAuto.matricula.errors %}
+                                                                          {% for error in formAuto.matricula.errors %}
+                                                                            <small class="error">
+                                                                              {{ error|escape }}
+                                                                            </small>
+                                                                          {% endfor %}
+                                                                        {% endif %}
+
+                                                                      <ul><label > Marca:</label></ul>
+                                                                      <ul>{{ formAuto.marca}}</ul>
+                                                                      {% if formAuto.marca.errors %}
+                                                                        {% for error in formAuto.marca.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Tipo:</label></ul>
+                                                                      <ul>{{ formAuto.tipo}}</ul>
+                                                                      {% if formAuto.tipo.errors %}
+                                                                        {% for error in formAuto.tipo.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Modelo: </label></ul>
+                                                                      <ul>{{ formAuto.modelo}}</ul>
+                                                                      {% if formAuto.modelo.errors %}
+                                                                        {% for error in formAuto.modelo.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Consecionario:</label></ul>
+                                                                      <ul>{{ formAuto.consecionario}}</ul>
+                                                                      {% if formAuto.consecionario.errors %}
+                                                                        {% for error in formAuto.consecionario.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Color:</label></ul>
+                                                                      <ul>{{ formAuto.color}}</ul>
+                                                                      {% if formAuto.color.errors %}
+                                                                        {% for error in formAuto.color.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                                                        <div class="row">
+                                                                          <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                                                             <a href="{% url "lista-autos" %}" class="btn btn-default">Cancelar</a>
+                                                                        </div>
+
+                                                                      </div>
+                                                                        </form>
+
+
+                                                                                  </div>
+                                                                            </div>
+                                                                        </div>
+                                            </main>
+{% endblock %}

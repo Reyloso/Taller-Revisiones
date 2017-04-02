@@ -1,0 +1,35 @@
+{% extends 'core/base_admin.html' %}
+{% block contenido %}
+  <section id="intro" style="height: 100px;">
+              <div class="container">
+                    <div class="row">
+                  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                      <div class="intro animate-box">
+                            <h1>Nuevo Consecionario</h1>
+                                </div>
+                                </div>
+                                </div>
+                              </section>
+                              <main id="main">
+                            <div class="container">
+                            <div class="col-md-8 col-md-offset animate-box">
+                              <div class="col-md-8 col-md-offset-2 animate-box">
+                                <form  action="" method="post">
+                                      {% csrf_token %}
+                                        <ul><label> Nit</label></ul>
+                                        <ul>{{formconsecionario.nit}}</ul>
+                                        <ul><label> Nombre</label></ul>
+                                        <ul>{{formconsecionario.nombre}}</ul>
+                                        <ul><label> Telefono</label></ul>
+                                        <ul>{{formconsecionario.telefono}}</ul>
+                                        <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                        <div class="row">
+                                          <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                            <a href="{% url "lista-autos" %}" class="btn btn-default navbar-btn">Cancelar</a>
+                                        </div>
+                                        </div>
+                  </div>
+              </div>
+            </div>
+          </main>
+{% endblock %}
