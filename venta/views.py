@@ -165,3 +165,15 @@ def modificar_consecionario(request,nit):
 
 
     return render(request, "venta/modificar_consecionario.html", {"formconsecionario":formconsecionario})
+
+def modificar_revision(request,id):
+    revision = get_object_or_404(Revision, pk=id)
+    formrevision = forms_revision(request.POST or None, instance=revision)
+    if request.method == "POST":
+        if formrevision.is_valid():
+            formrevision.save()
+            a = Revision.objects.all()
+            return render(request,'venta/lista_revision.html',{'a':a})
+
+
+    return render(request, "venta/modificar_revision.html", {"formrevision":formrevision})

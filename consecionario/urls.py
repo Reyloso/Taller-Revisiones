@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^nueva/revision/$', 'venta.views.crear_revision', name='nueva-revision'),
     url(r'^lista/revision/auto/(?P<id>\d+)', 'venta.views.lista_revision_auto', name='lista-revision-auto'),
     url(r'^eliminar/revision/(?P<id>\d+)', 'venta.views.eliminar_revision', name='eliminar-revision'),
+    url(r'^modificar/revision/(?P<id>\d+)', 'venta.views.modificar_revision', name='modificar-revision'),
 
 
 

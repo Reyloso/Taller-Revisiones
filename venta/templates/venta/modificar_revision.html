@@ -6,7 +6,7 @@
                                                   <div class="row">
                                                     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
                                                         <div class="intro animate-box">
-                                                              <h1>Modificar Consecionario</h1>
+                                                              <h1>Modificar Revision</h1>
                                                               </div>
                                                                   </div>
                                                                   </div>
@@ -17,30 +17,49 @@
                                                                       <form  action="" method="post">
                                                                         {% csrf_token %}
                                                                         {{ form.non_field_errors }}
-                                                                      <ul><label > Nid:</label></ul>
-                                                                      <ul>{{ formconsecionario.nit}}</ul>
-                                                                      {% if formconsecionario.nit.errors %}
-                                                                        {% for error in formconsecionario.nit.errors %}
+                                                                      <ul><label > Auto:</label></ul>
+                                                                      <ul>{{ formrevision.auto}}</ul>
+                                                                      {% if formrevision.auto.errors %}
+                                                                        {% for error in formrevision.auto.errors %}
                                                                           <small class="error">
                                                                             {{ error|escape }}
                                                                           </small>
                                                                         {% endfor %}
                                                                       {% endif %}
 
-                                                                      <ul><label > Nombre:</label></ul>
-                                                                      <ul>{{ formconsecionario.nombre}}</ul>
-                                                                      {% if formconsecionario.nombre.errors %}
-                                                                        {% for error in formconsecionario.nombre.errors %}
+                                                                      <ul><label > Filtro:</label></ul>
+                                                                      <ul>{{ formrevision.filtro}}</ul>
+                                                                      {% if formrevision.filtro.errors %}
+                                                                        {% for error in formrevision.filtro.errors %}
                                                                           <small class="error">
                                                                             {{ error|escape }}
                                                                           </small>
                                                                         {% endfor %}
                                                                       {% endif %}
 
-                                                                      <ul><label > Telefono:</label></ul>
-                                                                      <ul>{{ formconsecionario.telefono}}</ul>
-                                                                      {% if formconsecionario.telefono.errors %}
-                                                                        {% for error in formconsecionario.telefono.errors %}
+                                                                      <ul><label > Aceite:</label></ul>
+                                                                      <ul>{{ formrevision.aceite}}</ul>
+                                                                      {% if formrevision.aceite.errors %}
+                                                                        {% for error in formrevision.aceite.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Frenos:</label></ul>
+                                                                      <ul>{{ formrevision.frenos}}</ul>
+                                                                      {% if formrevision.frenos.errors %}
+                                                                        {% for error in formrevision.frenos.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <ul><label > Motor:</label></ul>
+                                                                      <ul>{{ formrevision.motor}}</ul>
+                                                                      {% if formrevision.motor.errors %}
+                                                                        {% for error in formrevision.motor.errors %}
                                                                           <small class="error">
                                                                             {{ error|escape }}
                                                                           </small>
