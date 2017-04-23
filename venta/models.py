@@ -6,7 +6,7 @@ from django.db import models
 class Consecionario(models.Model):
     nit = models.CharField(max_length=50, primary_key=True)
     nombre = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=50)
+    telefono =models.CharField(max_length=50)
 
     def __unicode__(self):
         return unicode(self.nombre)
@@ -34,7 +34,8 @@ class Auto(models.Model):
 class Cliente(models.Model):
     nid = models.CharField(max_length=50, primary_key=True)
     nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
+    primer_apellido = models.CharField(max_length=50)
+    segundo_apellido = models.CharField(max_length=50)
     telefono = models.CharField(max_length=50)
     auto = models.ForeignKey(Auto)
 

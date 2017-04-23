@@ -37,10 +37,20 @@
                                                                         {% endfor %}
                                                                       {% endif %}
 
-                                                                      <ul><label > Apellido:</label></ul>
-                                                                      <ul>{{ formCliente.apellido}}</ul>
-                                                                      {% if formCliente.apellido.errors %}
-                                                                        {% for error in formCliente.apellido.errors %}
+                                                                      <ul><label >Primer Apellido:</label></ul>
+                                                                      <ul>{{ formCliente.primer_apellido}}</ul>
+                                                                      {% if formCliente.primer_apellido.errors %}
+                                                                        {% for error in formCliente.primer_apellido.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label >Segundo Apellido:</label></ul>
+                                                                      <ul>{{ formCliente.segundo_apellido}}</ul>
+                                                                      {% if formCliente.segundo_apellido.errors %}
+                                                                        {% for error in formCliente.segundo_apellido.errors %}
                                                                           <small class="error">
                                                                             {{ error|escape }}
                                                                           </small>

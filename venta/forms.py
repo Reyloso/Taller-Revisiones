@@ -15,7 +15,7 @@ class forms_cliente(forms.ModelForm):
     class Meta:
         model = Cliente
 
-        fields = ['nid','nombre','apellido','telefono','auto']
+        fields = ['nid','nombre','primer_apellido','segundo_apellido','telefono','auto']
 
 
 class forms_consecionario(forms.ModelForm):

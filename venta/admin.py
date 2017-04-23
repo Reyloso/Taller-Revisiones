@@ -4,7 +4,7 @@ from .models import Cliente, Auto, Consecionario, Revision
 
 
 class cliente (admin.ModelAdmin):
-	list_display = ['nid', 'nombre','apellido','telefono','auto']
+	list_display = ['nid', 'nombre','primer_apellido','segundo_apellido','telefono','auto']
 	class Meta:
 		model = Cliente
 
